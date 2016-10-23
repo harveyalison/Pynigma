@@ -10,7 +10,8 @@ class Rotor:
 
     The combination of the commutator and the ring position fixes the input of the rotor
     relative to the output.
-    
+
+
 
     """
 
