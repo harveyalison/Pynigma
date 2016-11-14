@@ -1,13 +1,13 @@
-from Pynigma import preamble
+from Pynigma.rotor import Rotor
 
 class Scrambler:
     """Object representing the scrambler unit of an Enigma.
-    The military version of the Enigma machine had five wheels,
+    The military version of the Enigma machine had five rotors,
     three of which could be fitted in the scrambler at any time.
     The input signal first went through a 'Commutator' (C),
     a fixed shallow cylinder containing 26 terminals, corresponding
     to the letters of the alphabet. The signal then went in turn
-    through 3 movable wheels, through a fixed 'turn-around' cylinder,
+    through 3 movable rotors, through a fixed 'turn-around' cylinder,
     or 'umkehrwalze' (U), and back out again, as shown.
 
     U    3    2    1    C
@@ -18,21 +18,29 @@ class Scrambler:
     | <- | <- | <- | <- | <- Signal in
     --  ---  ---  ---  --
 
-    After each letter was scrambled, wheel 1 was rotated a single
-    step. One of the steps in each wheel causes the wheel to its'
-    left to rotate a step i.e. for every 26 steps of the wheel in
-    position 1, the wheel in position 2 moves on a step, and for
-    every 26 steps of the wheel in position 2, the wheel in position
+    After each letter was scrambled, rotor 1 was advanced a single
+    step. One of the steps in each rotor causes the rotor to its'
+    left to advance a step i.e. for every 26 steps of the rotor in
+    position 1, the rotor in position 2 moves on a step, and for
+    every 26 steps of the rotor in position 2, the rotor in position
     3 moves on a step.
     """
 
+    def __init__(self, rotor_order):
+        self.rotor1 = Rotor(int(rotor_order[0]))
+        self.rotor2 = Rotor(int(rotor_order[1]))
+        self.rotor3 = Rotor(int(rotor_order[2]))
+
     def scramble(self, letter):
-        """Encipher the message"""
-        cipher_text = 'lalala'
+        """Encipher the letter"""
+        cipher_letter = self.rotor1.get_connection(letter)
+        cipher_letter = self.rotor2.get_connection(letter)
+        cipher_letter = self.rotor3.get_connection(letter)
 
-        pre = preamble.get_preamble()
+        #TODO: implement reflector and call it here
 
-        return pre + \
-               'Plain text: ' + message + '\r\n' \
-               'Cipher text: ' + cipher_text
+        cipher_letter = self.rotor3.get_connection(letter)
+        cipher_letter = self.rotor2.get_connection(letter)
+        cipher_letter = self.rotor1.get_connection(letter)
 
+        return cipher_letter
