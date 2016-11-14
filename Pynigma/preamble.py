@@ -4,7 +4,8 @@ import datetime
 """
 
 #Call signs of the statins involved. First the sending station, then the destination(s)
-CALL_SIGNS = {'P7J', 'SF9', '5KQ'}
+#e.g. 'From P7J to SF9 and 5KQ'
+CALL_SIGNS = 'Not yet implemented'
 
 #Date and Time of the origin of the message
 DATE_OF_ORIGIN = datetime.datetime.now().date()
@@ -13,9 +14,8 @@ TIME_OF_ORIGIN = datetime.datetime.now().time()
 NUMBER_OF_LETTERS = 0
 
 # An indication of whether the message is complete,
-# or part of a larger message e.g. {2,4} would indicate
-# part 2 of a 4 part message
-SINGLE_OR_MULTIPART = {1,1}
+# or part of a larger message e.g. 'Part 2 of a 4 part message'
+SINGLE_OR_MULTIPART = 'Not yet implemented'
 
 # A three letter group to distinguish between different
 # types of Enigma traffic
@@ -27,10 +27,10 @@ INDICATOR_SETTING = 'DEF'
 
 def get_preamble():
     return \
-        str(CALL_SIGNS) + '\r\n' + \
-        str(DATE_OF_ORIGIN) + '\r\n' + \
-        str(TIME_OF_ORIGIN) + '\r\n' + \
-        str(NUMBER_OF_LETTERS) + '\r\n' + \
-        str(SINGLE_OR_MULTIPART) + '\r\n' + \
-        str(DISCRIMINANT) + '\r\n' + \
-        str(INDICATOR_SETTING) + '\r\n'
+        'Call signs: ' + str(CALL_SIGNS) + '\r\n' + \
+        'Date of origin: ' + str(DATE_OF_ORIGIN) + '\r\n' + \
+        'Time of origin: ' + str(TIME_OF_ORIGIN) + '\r\n' + \
+        'Number of letters: ' + str(NUMBER_OF_LETTERS) + '\r\n' + \
+        'Single or multi-part: ' + str(SINGLE_OR_MULTIPART) + '\r\n' + \
+        'Discriminant: ' + str(DISCRIMINANT) + '\r\n' + \
+        'Indicator setting: ' + str(INDICATOR_SETTING) + '\r\n'

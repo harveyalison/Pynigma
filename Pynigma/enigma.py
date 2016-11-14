@@ -11,5 +11,7 @@ class Enigma:
 
         pre = preamble.get_preamble()
 
-        return pre + cipher_text
+        return pre + \
+               'Plain text: ' + message + '\r\n' \
+               'Cipher text: ' + cipher_text
 

@@ -37,6 +37,7 @@ args = parser.parse_args()
 
 #region un-comment to debug args
 #print('Settings used...')
+#print('Settings used...')
 #print('Message: ' + args.message)
 #print('Discriminant: ' + args.discriminant)
 #print('Indicator setting: ' + args.indicator)
@@ -48,6 +49,7 @@ args = parser.parse_args()
 
 preamble.DISCRIMINANT = args.discriminant
 preamble.INDICATOR_SETTING = args.indicator
+preamble.NUMBER_OF_LETTERS = len(args.message)
 
 e = Enigma()
 
