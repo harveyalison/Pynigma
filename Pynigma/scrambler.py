@@ -27,6 +27,7 @@ class Scrambler:
     """
 
     def __init__(self, rotor_order):
+        print('rotor order = ' + rotor_order)
         self.rotor1 = Rotor(int(rotor_order[0]))
         self.rotor2 = Rotor(int(rotor_order[1]))
         self.rotor3 = Rotor(int(rotor_order[2]))
@@ -43,4 +44,4 @@ class Scrambler:
         cipher_letter = self.rotor2.get_connection(letter)
         cipher_letter = self.rotor1.get_connection(letter)
 
-        return cipher_letter
+        return 'x' #cipher_letter

@@ -15,7 +15,7 @@
         "cross_pluggings": "KY,TO,ZL,BU,WD,CX,IJ,GA,PH,NR,FM"
     },
     "2016-11-17": {
-        "rotor_order": "413",
+        "rotor_order": "444",
         "ring_settings": "DOH",
         "cross_pluggings": "KY,TO,ZL,BU,WD,CX,IJ,GA,PH,NR,FM"
     }
