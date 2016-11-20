@@ -19,10 +19,17 @@ class Enigma:
         self.keys = KeyReader(keys_file)
         #endregion
 
-        #region Get today's rotor order
+        #region Get today's rotor order, ring settings and cross pluggings
         date_as_string = datetime.datetime.now().date().strftime('%Y-%m-%d')
         self.rotor_order = self.keys.get_rotor_order(date_as_string)
+        self.ring_settings = self.keys.get_ring_settings(date_as_string)
+        self.cross_pluggings = self.keys.get_rotor_order(date_as_string)
         #endregion
+
+        #debug text
+        print('rotor order = ' + self.rotor_order)
+        print('ring settings = ' + self.ring_settings)
+        print('cross pluggings = ' + self.cross_pluggings)
 
         #Initialise the scrambler
         self.scrambler = Scrambler(self.rotor_order)

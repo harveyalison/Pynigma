@@ -27,21 +27,29 @@ class Scrambler:
     """
 
     def __init__(self, rotor_order):
-        print('rotor order = ' + rotor_order)
         self.rotor1 = Rotor(int(rotor_order[0]))
         self.rotor2 = Rotor(int(rotor_order[1]))
         self.rotor3 = Rotor(int(rotor_order[2]))
 
     def scramble(self, letter):
         """Encipher the letter"""
+
         cipher_letter = self.rotor1.get_connection(letter)
-        cipher_letter = self.rotor2.get_connection(letter)
-        cipher_letter = self.rotor3.get_connection(letter)
+        print('rotor 1 encipher: ' + cipher_letter)
+        cipher_letter = self.rotor2.get_connection(cipher_letter)
+        print('rotor 2 encipher: ' + cipher_letter)
+        cipher_letter = self.rotor3.get_connection(cipher_letter)
+        print('rotor 3 encipher: ' + cipher_letter)
 
         #TODO: implement reflector and call it here
 
-        cipher_letter = self.rotor3.get_connection(letter)
-        cipher_letter = self.rotor2.get_connection(letter)
-        cipher_letter = self.rotor1.get_connection(letter)
+        cipher_letter = self.rotor3.get_connection(cipher_letter)
+        print('rotor 3 encipher: ' + cipher_letter)
+        cipher_letter = self.rotor2.get_connection(cipher_letter)
+        print('rotor 2 encipher: ' + cipher_letter)
+        cipher_letter = self.rotor1.get_connection(cipher_letter)
+        print('rotor 1 encipher: ' + cipher_letter)
 
-        return 'x' #cipher_letter
+        #TODO: advance rotor 1, and if necessary, 2 and 3
+
+        return cipher_letter

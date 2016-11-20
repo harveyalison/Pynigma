@@ -1,20 +1,20 @@
 {
-    "2016-11-14": {
+    "2016-11-20": {
         "rotor_order": "413",
         "ring_settings": "DOH",
         "cross_pluggings": "KY,TO,ZL,BU,WD,CX,IJ,GA,PH,NR,FM"
     },
-    "2016-11-15": {
+    "2016-11-21": {
         "rotor_order": "413",
         "ring_settings": "DOH",
         "cross_pluggings": "KY,TO,ZL,BU,WD,CX,IJ,GA,PH,NR,FM"
     },
-    "2016-11-16": {
+    "2016-11-22": {
         "rotor_order": "413",
         "ring_settings": "DOH",
         "cross_pluggings": "KY,TO,ZL,BU,WD,CX,IJ,GA,PH,NR,FM"
     },
-    "2016-11-17": {
+    "2016-11-23": {
         "rotor_order": "444",
         "ring_settings": "DOH",
         "cross_pluggings": "KY,TO,ZL,BU,WD,CX,IJ,GA,PH,NR,FM"
