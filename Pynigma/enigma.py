@@ -32,7 +32,7 @@ class Enigma:
         print('cross pluggings = ' + self.cross_pluggings)
 
         #Initialise the scrambler
-        self.scrambler = Scrambler(self.rotor_order)
+        self.scrambler = Scrambler(self.rotor_order, self.ring_settings)
 
     def encipher(self, message):
         """Encipher the message"""
