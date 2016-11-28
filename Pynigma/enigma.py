@@ -3,6 +3,7 @@ import string
 from Pynigma import preamble
 from Pynigma.key_reader import KeyReader
 from Pynigma.scrambler import Scrambler
+from Pynigma.settings import *
 import datetime
 import os
 import sys
@@ -32,7 +33,7 @@ class Enigma:
         print('cross pluggings = ' + self.cross_pluggings)
 
         #Initialise the scrambler
-        self.scrambler = Scrambler(self.rotor_order, self.ring_settings)
+        self.scrambler = Scrambler(self.rotor_order, self.ring_settings, reflector_type=DEFAULT_REFLECTOR)
 
     def encipher(self, message):
         """Encipher the message"""

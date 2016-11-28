@@ -1,5 +1,5 @@
 class Rotor:
-    """Base object representing a physical Enigma rotor (or wheel)
+    """Object representing a physical Enigma rotor (or wheel)
 
     A rotor:
 

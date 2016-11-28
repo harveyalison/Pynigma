@@ -1,4 +1,6 @@
 from Pynigma.rotor import Rotor
+from Pynigma.reflector import Reflector
+from Pynigma.enums import ReflectorType
 
 class Scrambler:
     """Object representing the scrambler unit of an Enigma.
@@ -26,10 +28,11 @@ class Scrambler:
     3 moves on a step.
     """
 
-    def __init__(self, rotor_order, ring_settings):
+    def __init__(self, rotor_order, ring_settings, reflector_type = None):
         self.rotor1 = Rotor(int(rotor_order[0]), ring_settings[0])
         self.rotor2 = Rotor(int(rotor_order[1]), ring_settings[1])
         self.rotor3 = Rotor(int(rotor_order[2]), ring_settings[2])
+        self.reflector = Reflector(reflector_type)
 
     def scramble(self, letter):
         """
@@ -47,7 +50,8 @@ class Scrambler:
         letter = self.rotor3.get_output(letter)
         #print('Debug. After rotor 3: \t' + letter)
 
-        #TODO: implement reflector and call it here
+        letter = self.reflector.get_reflection(letter)
+        # print('Debug. After reflector: \t' + letter)
 
         letter = self.rotor3.get_output(letter)
         #print('Debug. After rotor 3: \t' + letter)
@@ -78,7 +82,8 @@ class Scrambler:
         letter = self.rotor3.get_input(letter)
         #print('Debug. After rotor 3: \t' + letter)
 
-        # TODO: implement reflector and call it here
+        letter = self.reflector.get_reflection(letter)
+        # print('Debug. After reflector: \t' + letter)
 
         letter = self.rotor3.get_input(letter)
         #print('Debug. After rotor 3: \t' + letter)
