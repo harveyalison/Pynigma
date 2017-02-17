@@ -20,9 +20,9 @@ class Reflector:
             self.connections = ['AY','BR','CU','DH','EQ','FS','GL','IP','JX','KN','MO','TZ','VW']
         elif self.reflector_type == ReflectorType.C:
             self.connections = ['AF','BV','CP','DJ','EI','GO','HY','KR','LZ','MX','NW','TQ','SU']
-        elif self.reflector_type == ReflectorType.B_Dünn:
+        elif self.reflector_type == ReflectorType.B_Dunn:
             self.connections = ['AE','BN','CK','DQ','FU','GY','HW','IJ','LO','MP','RX','SZ','TV']
-        elif self.reflector_type == ReflectorType.C_Dünn:
+        elif self.reflector_type == ReflectorType.C_Dunn:
             self.connections = ['AR','BD','CO','EJ','FN','GT','HK','IV','LM','PW','QZ','SX','UY']
 
     def get_reflection(self, letter):

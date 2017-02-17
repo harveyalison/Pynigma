@@ -45,6 +45,27 @@ class Rotor:
         self.position = self.get_letter_position_in_alphabet(ring_setting) - 1
         self.rotate(self.connections, -self.position)
 
+    def at_step_position(self):
+        #TODO: work out whether the rotor indicator is at the step position
+        #Rotor I at R
+        #Rotor II at F
+        #Rotor III at W
+        #Rotor IV at K
+        #Rotor V at A
+        #Rotors VI, VII and VIII at A and at N
+
+        #if self.rotor_id == 1:
+        #elif self.rotor_id == 2:
+        #elif self.rotor_id == 3:
+        #elif self.rotor_id == 4:
+        #elif self.rotor_id == 5:
+        #elif self.rotor_id == 6:
+        #elif self.rotor_id == 7:
+        #elif self.rotor_id == 8:
+        #elif self.rotor_id == 'Beta':
+        #elif self.rotor_id == 'Gamma':
+        pass
+
     def advance(self):
         """Move the rotor to the next position"""
         self.rotate(self.connections, -1)

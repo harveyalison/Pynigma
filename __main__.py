@@ -2,6 +2,8 @@ import argparse
 from Pynigma import preamble
 from Pynigma.enigma import Enigma
 
+#region Parse the command line arguments
+
 parser = argparse.ArgumentParser(description='Encode or decode a message using Enigma')
 
 parser.add_argument('message', help='message to encipher / decipher', nargs='?', default='Hut 6')
@@ -29,14 +31,11 @@ parser.add_argument('-d', '--double_encipher', action='store_true',  \
                     ' If not specified, will use single encihering of the indicator setting, \
                     as used after May 10 1940.')
 
-#endregion
-
 args = parser.parse_args()
 
 #TODO: validate args
 
 #region un-comment to debug args
-#print('Settings used...')
 #print('Settings used...')
 #print('Message: ' + args.message)
 #print('Discriminant: ' + args.discriminant)
@@ -45,6 +44,8 @@ args = parser.parse_args()
 #    print('Double encipher indicator setting')
 #else:
 #    print('Single encipher indicator setting')
+#endregion
+
 #endregion
 
 preamble.DISCRIMINANT = args.discriminant

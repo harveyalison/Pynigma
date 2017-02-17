@@ -18,7 +18,7 @@ class ReflectorTests(unittest.TestCase):
         self.assertEquals('U', c_reflection)
 
     def test_reflector_C_Dünn_reflections(self):
-        reflector = Reflector(ReflectorType.C_Dünn)
+        reflector = Reflector(ReflectorType.C_Dunn)
         a_reflection = reflector.get_reflection('A')
         r_reflection = reflector.get_reflection('R')
         s_reflection = reflector.get_reflection('S')
